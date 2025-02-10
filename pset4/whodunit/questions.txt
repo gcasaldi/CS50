@@ -1,0 +1,36 @@
+1.  <stdint.h> is one of the headers where the new integer types, Fixed-width integer types, are defined.
+
+2.  uint8_t, uint16_t, uint32_t and uint64_t is equivalent to unsigned char, unsigned short, unsigned int and unsigned long long respectively.
+    Having precisely defined types would make the program easier and safer to port. The machine won't have trouble interpreting it across different x-bit machines.
+    With <stdint.h>, what you type is what you get.
+
+3.  The bytes of the following types:
+
+    BYTE =  1 byte
+    DWORD = 4 bytes
+    LONG =  4 bytes
+    WORD =  2 bytes
+
+4.  The first 2 bytes of a BMP file in ASCII must be "B" and "M".
+
+5.  biSize is the number of bytes (14) that is required by the structure BITMAPINFOHEADER.
+    bfSize is the overall size, in bytes, of the bitmap file (biSizeImage + 54).
+
+6.  If the biHeight is negative, it means that the bitmap is a top-down DIB (Device-Independent Bitmap) and its origin is the upper-left corner.
+
+7.  biBitCount specifies the number of bits per pixel. This value is the implied bit depth of the uncompressed image, after the image has been decoded.
+
+8.  fopen can return NULL in various circumstances like:
+    - The file doesn't exist.
+    - The file is opened in a mode that doesn't allow other accesses.
+    - The network is down.
+    - The file exists, but you don't have permissions.
+
+9.  The 1 in the fread code indicates the quantity needed. Since there is only 1 BITMAPINFOHEADER, that's why we have 1.
+
+10. The value would be 3.
+
+11. fseek sets the file position. It can be used to change the offset, or location of the file pointer.
+
+12. SEEK_CUR is one of the symbolic constants which specifies that offset is a count of characters from the current file position.
+    This could be a positive or negative.

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+
+            <!-- TODO -->
+            <div class = "form-group">
+                <input class = "form-control-file" name = "file1" type = "file"/>
+            </div>
+
+            <div class = "form-group">
+                <input class = "form-control-file" name = "file2" type = "file"/>
+            </div>
+
+            <div class = "form-check">
+                <label class = "form-check-label">
+                    <input type = "radio" class = "form-check-input" name = "algorithm" value = "lines">
+                    Compare Lines
+                </label>
+            </div>
+
+            <div class = "form-check">
+                <label class = "form-check-label">
+                    <input type = "radio" class = "form-check-input" name = "algorithm" value = "sentences">
+                    Compare Sentences
+                </label>
+            </div>
+
+            <div class = "form-check">
+                <label class = "form-check-label">
+                    <input type = "radio" class = "form-check-input" name = "algorithm" value = "substrings">
+                    Compare Substrings
+                    <input type = "number" class = "form-control form-control-sm" name = "length" placeholder = "of length n"/>
+                </label>
+            </div>
+
+            <button type = "submit" class="btn btn-default">Compare</button>
+
+        </form>
+    </div>
+
+{% endblock %}
